@@ -5,19 +5,19 @@
 	"targetType": "executable",
 	"buildTypes": {
 		"ldc-production": {
-			"dflags": ["-release", "-O2", "-boundscheck=off"]
+			"dflags": ["-release", "-O2", "-boundscheck=off", "-static"]
 		},
 		"dmd-production": {
 			"dflags": ["-release", "-O", "-boundscheck=off"]
 		},
 		"ldc-profile": {
-			"dflags": ["-g", "-profile", "-release", "-O2", "-boundscheck=off", "-flto=full"]
+			"dflags": ["-g", "-profile", "-release", "-O2", "-boundscheck=off", "-flto=full", "-static"]
 		},
 		"dmd-profile": {
 			"dflags": ["-g", "-profile", "-release", "-O", "-boundscheck=off"]
 		},
 		"ldc-profile-gc": {
-			"dflags": ["-g", "-profile=gc", "-release", "-O2", "-boundscheck=off", "-flto=full"]
+			"dflags": ["-g", "-profile=gc", "-release", "-O2", "-boundscheck=off", "-flto=full", "-static"]
 		},
 		"dmd-profile-gc": {
 			"dflags": ["-g", "-profile=gc", "-release", "-O", "-boundscheck=off"]
