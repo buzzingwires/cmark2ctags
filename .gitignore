@@ -1,2 +1,9 @@
 .dub/
 cmark2ctags
+!src/cmark2ctags
+markdown2ctags.py
+src-cmark2ctags-cmark.lst
+src-cmark2ctags-item.lst
+src-cmark2ctags-parse.lst
+src-cmark2ctags-tag.lst
+src-main.lst
