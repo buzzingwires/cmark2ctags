@@ -125,7 +125,6 @@ struct cmark_chunk
 {
 	ubyte* data;
 	bufsize_t len;
-	bufsize_t alloc; // also implies a NULL-terminated string
 }
 
 struct cmark_strbuf
@@ -138,19 +137,18 @@ struct cmark_strbuf
 
 struct cmark_list
 {
-	cmark_list_type list_type;
 	int marker_offset;
 	int padding;
 	int start;
-	cmark_delim_type delimiter;
+	ubyte list_type;
+	ubyte delimiter;
 	ubyte bullet_char;
 	bool tight;
 }
 
 struct cmark_code
 {
-	cmark_chunk info;
-	cmark_chunk literal;
+	ubyte* info;
 	ubyte fence_length;
 	ubyte fence_offset;
 	ubyte fence_char;
@@ -165,19 +163,19 @@ struct cmark_heading
 
 struct cmark_link
 {
-	cmark_chunk url;
-	cmark_chunk title;
+	ubyte* url;
+	ubyte* title;
 }
 
 struct cmark_custom
 {
-	cmark_chunk on_enter;
-	cmark_chunk on_exit;
+	ubyte* on_enter;
+	ubyte* on_exit;
 }
 
 struct cmark_node
 {
-	cmark_strbuf content;
+	cmark_mem* mem;
 
 	cmark_node* next;
 	cmark_node* prev;
@@ -187,16 +185,19 @@ struct cmark_node
 
 	void* user_data;
 
+	ubyte* data;
+	bufsize_t len;
+
 	int start_line;
 	int start_column;
 	int end_line;
 	int end_column;
+	int internal_offset;
 	ushort type;
 	ushort flags;
 
 	union
 	{
-		cmark_chunk literal;
 		cmark_list list;
 		cmark_code code;
 		cmark_heading heading;
