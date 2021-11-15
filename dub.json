@@ -4,19 +4,19 @@
 	"targetType": "executable",
 	"buildTypes": {
 		"ldc-production": {
-			"dflags": ["-release", "-O2", "-boundscheck=off"]
+			"dflags": ["-release", "-O2", "-boundscheck=off", "-L/usr/lib64/libcmark.a"]
 		},
 		"dmd-production": {
 			"dflags": ["-release", "-O", "-boundscheck=off", "-L-l:libphobos2.a", "-L-l:libdruntime.a", "-L/usr/lib64/libcmark.a"]
 		},
 		"ldc-profile": {
-			"dflags": ["-g", "-profile", "-release", "-O2", "-boundscheck=off", "-flto=full"]
+			"dflags": ["-g", "-profile", "-release", "-O2", "-boundscheck=off", "-flto=full",  "-L/usr/lib64/libcmark.a"]
 		},
 		"dmd-profile": {
 			"dflags": ["-g", "-profile", "-release", "-O", "-boundscheck=off", "-L-l:libphobos2.a", "-L-l:libdruntime.a", "-L/usr/lib64/libcmark.a"]
 		},
 		"ldc-profile-gc": {
-			"dflags": ["-g", "-profile=gc", "-release", "-O2", "-boundscheck=off", "-flto=full"]
+			"dflags": ["-g", "-profile=gc", "-release", "-O2", "-boundscheck=off", "-flto=full",  "-L/usr/lib64/libcmark.a"]
 		},
 		"dmd-profile-gc": {
 			"dflags": ["-g", "-profile=gc", "-release", "-O", "-boundscheck=off", "-L-l:libphobos2.a", "-L-l:libdruntime.a", "-L/usr/lib64/libcmark.a"]
