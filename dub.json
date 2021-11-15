@@ -16,10 +16,10 @@
 			"dflags": ["-g", "-profile=gc", "-release", "-O", "-boundscheck=off", "-L/usr/lib64/libcmark.a"]
 		},
 		"ldc-coverage": {
-			"dflags": ["-g", "-O0", "-static", "-cov"]
+			"dflags": ["-g", "-O0", "-static", "-cov", "-L/usr/lib64/libcmark.a"]
 		},
 		"dmd-coverage": {
-			"dflags": ["-g", "-cov"]
+			"dflags": ["-g", "-cov", "-L/usr/lib64/libcmark.a"]
 		}
 	}
 }
