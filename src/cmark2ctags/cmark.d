@@ -13,62 +13,7 @@ extern(C) @nogc nothrow
  */
 enum int CMARK_OPT_DEFAULT = 0;
 
-/**
- * ### Options affecting rendering
- */
-
-/** Include a `data-sourcepos` attribute on all block elements.
- */
-enum int CMARK_OPT_SOURCEPOS = (1 << 1);
-
-/** Render `softbreak` elements as hard line breaks.
- */
-enum int CMARK_OPT_HARDBREAKS = (1 << 2);
-
-/** Suppress raw HTML and unsafe links (`javascript:`, `vbscript:`,
- * `file:`, and `data:`, except for `image/png`, `image/gif`,
- * `image/jpeg`, or `image/webp` mime types).  Raw HTML is replaced
- * by a placeholder HTML comment. Unsafe links are replaced by
- * empty strings.
- */
-enum int CMARK_OPT_SAFE = (1 << 3);
-
-/** Render `softbreak` elements as spaces.
- */
-enum int CMARK_OPT_NOBREAKS = (1 << 4);
-
-/**
- * ### Options affecting parsing
- */
-
-/** Legacy option (no effect).
- */
-enum int CMARK_OPT_NORMALIZE = (1 << 8);
-
-/** Validate UTF-8 in the input before parsing, replacing illegal
- * sequences with the replacement character U+FFFD.
- */
-enum int CMARK_OPT_VALIDATE_UTF8 = (1 << 9);
-
-/** Convert straight quotes to curly, --- to em dashes, -- to en dashes.
- */
-enum int CMARK_OPT_SMART = (1 << 10);
-
 alias bufsize_t = Typedef!int;
-
-enum cmark_list_type
-{
-	CMARK_NO_LIST,
-	CMARK_BULLET_LIST,
-	CMARK_ORDERED_LIST
-}
-
-enum cmark_delim_type
-{
-	CMARK_NO_DELIM,
-	CMARK_PERIOD_DELIM,
-	CMARK_PAREN_DELIM
-}
 
 enum cmark_event_type
 {
@@ -119,20 +64,6 @@ struct cmark_mem
 	void* function(size_t, size_t) calloc;
 	void* function(void*, size_t) realloc;
 	void function(void*) free;
-}
-
-struct cmark_chunk
-{
-	ubyte* data;
-	bufsize_t len;
-}
-
-struct cmark_strbuf
-{
-	cmark_mem* mem;
-	ubyte* ptr;
-	int asize;
-	int size;
 }
 
 struct cmark_list
