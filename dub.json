@@ -21,6 +21,12 @@
 		},
 		"dmd-profile-gc": {
 			"dflags": ["-g", "-profile=gc", "-release", "-O", "-boundscheck=off"]
+		},
+		"ldc-coverage": {
+			"dflags": ["-g", "-O0", "-static", "-cov"]
+		},
+		"dmd-coverage": {
+			"dflags": ["-g", "-cov"]
 		}
 	}
 }
