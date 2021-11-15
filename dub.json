@@ -1,0 +1,26 @@
+{
+	"name": "cmark2ctags",
+	"description": "Convert MarkDown files to Exuberant Ctags using libcmark.",
+	"libs": ["cmark"],
+	"targetType": "executable",
+	"buildTypes": {
+		"ldc-production": {
+			"dflags": ["-release", "-O2", "-boundscheck=off"]
+		},
+		"dmd-production": {
+			"dflags": ["-release", "-O", "-boundscheck=off"]
+		},
+		"ldc-profile": {
+			"dflags": ["-g", "-profile", "-release", "-O2", "-boundscheck=off", "-flto=full"]
+		},
+		"dmd-profile": {
+			"dflags": ["-g", "-profile", "-release", "-O", "-boundscheck=off"]
+		},
+		"ldc-profile-gc": {
+			"dflags": ["-g", "-profile=gc", "-release", "-O2", "-boundscheck=off", "-flto=full"]
+		},
+		"dmd-profile-gc": {
+			"dflags": ["-g", "-profile=gc", "-release", "-O", "-boundscheck=off"]
+		}
+	}
+}
