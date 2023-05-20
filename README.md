@@ -17,7 +17,7 @@ There are a number of build types for cmark2ctags. All of them require the `libc
 |`ldc-coverage`   :|Build coverage checking/debugging code using the `ldc` compiler.|
 |`dmd-coverage`   :|Build coverage checking/debugging code using the `dmd` compiler.|
 
-Choose a build type and run `dub build -b <build type>`
+Choose a build type and run `dub build -b <build type>` for the dmd options. For the ldc options, `dub build -b <build type> --compiler=ldc2` is probably necessary.
 
 Vim Integration
 ---------------
