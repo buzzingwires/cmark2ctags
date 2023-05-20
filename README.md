@@ -1,7 +1,7 @@
 cmark2ctags
 ===========
 
-*Convert MarkDown files to Exuberant Ctags using libcmark.*
+*Convert MarkDown files to Exuberant Ctags using libcmark*
 
 Building and Installation
 -------------------------
